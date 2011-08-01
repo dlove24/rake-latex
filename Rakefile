@@ -14,11 +14,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "rake-latex"
+  gem.name = "dl-rake-latex"
   gem.homepage = "http://github.com/dlove24/rake-latex"
-  gem.license = "MIT"
+  gem.license = "GNU"
   gem.summary = %Q{Rake LaTeX task developed by the Software Engineering group at the University of Oxford}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{http://devel.softeng.ox.ac.uk/trac/softeng/wiki/Utilities/RakeLatex}
   gem.email = "david@homeunix.org.uk"
   gem.authors = ["David Love"]
   # dependencies defined in Gemfile
@@ -30,14 +30,6 @@ Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
-end
-
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
 end
 
 task :default => :test
