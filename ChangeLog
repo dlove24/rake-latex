@@ -1,0 +1,19 @@
+2007-02-26  Douglas Creager  <douglas.creager@comlab.ox.ac.uk>
+
+	* lib/rake-latex/figures.rb: Adding "includes" parameter for
+	Gnuplot figures.
+
+	* lib/rake-latex/latex.rb: Only run latex/pdflatex twice *after*
+	bibtex has been run.  PS file only depends on DVI file, not on any
+	of the source files.
+
+	* lib/rake-latex/vega.rb: Adding support for vega code listings
+
+	* lib/rake-latex/figures.rb: Adding support for Gnuplot-based
+	figures
+
+2006-11-28  Douglas Creager  <douglas.creager@comlab.ox.ac.uk>
+
+	* Rakefile: Add support for generating .tar.gz archives.  Don't
+	require rubygems package to build .tar.gz.
+

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Usage:
+#   gnuplot-latex-fonts <gnuplot file> [<font file>...]
+#
+# This script runs gnuplot on the file specified by the first
+# command-line argument.  The optional remaining arguments are Type1
+# font files that are included by the gnuplot file; the script will
+# use TeX's kpsewhich utility to find where each of these files is
+# located, and will construct an appropriate GNUPLOT_FONTPATH
+# environment variable so that gnuplot can find these fonts.
+
+GNUPLOT_FILE=$1
+shift
+
+fontpath () {
+    # Run kpsewhich on each font to find its full location.  Use
+    # dirname to extract the directory portion of the path.  Use sort
+    # and uniq to filter out duplicate paths, and finally use paste to
+    # glue them together into a PATH-like directory list.
+    for c in `kpsewhich "$@"`; do dirname $c; done | \
+        sort | uniq | paste -s -d : -
+}
+
+GNUPLOT_FONTPATH=`fontpath "$@"` gnuplot "$GNUPLOT_FILE"
