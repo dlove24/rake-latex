@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{dl-rake-latex}
-  s.version = "5.4.0"
+  s.version = "5.4.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Love"]
-  s.date = %q{2011-08-01}
+  s.date = %q{2012-04-16}
   s.default_executable = %q{gnuplot-latex-fonts}
   s.description = %q{http://devel.softeng.ox.ac.uk/trac/softeng/wiki/Utilities/RakeLatex}
   s.email = %q{david@homeunix.org.uk}
@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "bin/gnuplot-latex-fonts",
+    "dl-rake-latex.gemspec",
     "lib/rake-latex.rb",
     "lib/rake-latex/figures.rb",
     "lib/rake-latex/latex.rb",
