@@ -197,7 +197,7 @@ module Rake
     end
 
     def run_pdflatex_once
-      sh %{#{@pdflatexinputs} pdflatex #{File.basename(@blank)}}
+      sh %{#{@pdflatexinputs} xelatex #{File.basename(@blank)}}
     end
 
     def run_pdflatex(task, once=false)
